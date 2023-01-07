@@ -1,9 +1,12 @@
 {
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
     "jest": "^29.3.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "watch": "jest --watch *.js" 
   }
 }
