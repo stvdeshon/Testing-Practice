@@ -5,6 +5,8 @@ These are exercises to practice TDD.
 
  - JavaScript
  - Jest
+ - ESlint
+ - Prettier
  - Npm
  - Babel
  - Git
