@@ -7,17 +7,35 @@ function caesarCipher(string, key) {
     if (string[i] === " ") {
       ciphered += string[i];
     } else if (string[i] === string[i].toUpperCase()) {
-      if (i + key > string.length) {
-        let upper = upperCase.findIndex((char) => char == string[i] % 26);
+      if (i == string.length) {
+        // let reducer = string.length - 1 - i;
+        // let modulo = key - reducer;
+
+        let upper = upperCase.findIndex((char) => char == string[i] + key);
         ciphered += upperCase[upper + key];
+      } else if (i + key > string.length) {
+        let reducer = string.length - i;
+        let modulo = key - reducer;
+
+        let upper = upperCase.findIndex((char) => char == string[i] + key);
+        ciphered += upperCase[upper + modulo];
       } else {
         let upper = upperCase.findIndex((char) => char == string[i]);
         ciphered += upperCase[upper + key];
       }
     } else if (string[i] === string[i].toLowerCase()) {
-      if (i + key > string.length) {
-        let lower = lowerCase.findIndex((char) => char == string[i] % 26);
-        ciphered += lowerCase[lower + key];
+      if (i == string.length) {
+        // let reducer = string.length - 1 - i;
+        // let modulo = key - reducer;
+
+        let upper = lowerCase.findIndex((char) => char == string[i] + key);
+        ciphered += lowerCase[upper + key];
+      } else if (i + key > string.length) {
+        let reducer = string.length - i;
+        let modulo = key - reducer;
+
+        let lower = lowerCase.findIndex((char) => char == string[i] + key);
+        ciphered += lowerCase[lower + modulo];
       } else {
         let lower = lowerCase.findIndex((char) => char == string[i]);
         ciphered += lowerCase[lower + key];
@@ -29,3 +47,11 @@ function caesarCipher(string, key) {
 }
 
 module.exports = caesarCipher;
+
+// if (i == string.length - 1) {
+//   let reducer = string.length - 1 - i;
+//   let modulo = key - reducer;
+
+//   let upper = upperCase.findIndex((char) => char == string[i] + key);
+//   ciphered += upperCase[upper + modulo];
+// }
