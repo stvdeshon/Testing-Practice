@@ -1,7 +1,7 @@
 const caesarCipher = require("../scripts/caesarCipher");
 
 test("shifts every letter in a string by one while retaining case", () => {
-  expect(caesarCipher("Juliuy", 1)).toBe("Kvmjvz");
+  expect(caesarCipher("Abcde", 1)).toBe("Bcdef");
 });
 
 test("works with spaces", () => {

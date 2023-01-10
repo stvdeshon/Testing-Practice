@@ -43,3 +43,11 @@ module.exports = caesarCipher;
 //   let upper = upperCase.findIndex((char) => char == string[i] + key);
 //   ciphered += upperCase[upper + modulo];
 // }
+
+// if (i == string.length - 1) {
+//   // let reducer = string.length - 1 - i;
+//   // let modulo = key - reducer;
+
+//   let upper = lowerCase.findIndex((char) => char == string[i] + key);
+//   ciphered += lowerCase[upper + key];
+// }
