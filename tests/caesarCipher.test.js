@@ -8,6 +8,6 @@ test("works with spaces", () => {
   expect(caesarCipher("Ab cD", 1)).toBe("Bc dE");
 });
 
-test("wraps from z to a", () => {
-  expect(caesarCipher("z", 2)).toBe("b");
+test("wraps from Z to B", () => {
+  expect(caesarCipher("Z", 2)).toBe("B");
 });

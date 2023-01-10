@@ -3,15 +3,25 @@ function caesarCipher(string, key) {
   const lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVXWYZ".split("");
 
-  for (let i in string) {
+  for (let i = 0; i < string.length; i++) {
     if (string[i] === " ") {
       ciphered += string[i];
     } else if (string[i] === string[i].toUpperCase()) {
-      const upper = upperCase.findIndex((char) => char == string[i]);
-      ciphered += upperCase[upper + key];
+      if (i + key > string.length) {
+        let upper = upperCase.findIndex((char) => char == string[i] % 26);
+        ciphered += upperCase[upper + key];
+      } else {
+        let upper = upperCase.findIndex((char) => char == string[i]);
+        ciphered += upperCase[upper + key];
+      }
     } else if (string[i] === string[i].toLowerCase()) {
-      const lower = lowerCase.findIndex((char) => char == string[i]);
-      ciphered += lowerCase[lower + key];
+      if (i + key > string.length) {
+        let lower = lowerCase.findIndex((char) => char == string[i] % 26);
+        ciphered += lowerCase[lower + key];
+      } else {
+        let lower = lowerCase.findIndex((char) => char == string[i]);
+        ciphered += lowerCase[lower + key];
+      }
     }
   }
 
@@ -19,3 +29,5 @@ function caesarCipher(string, key) {
 }
 
 module.exports = caesarCipher;
+
+//const lower = lowerCase.findIndex((char) => char == string[(lower + key) % string.length]);
