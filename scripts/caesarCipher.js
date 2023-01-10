@@ -29,5 +29,3 @@ function caesarCipher(string, key) {
 }
 
 module.exports = caesarCipher;
-
-//const lower = lowerCase.findIndex((char) => char == string[(lower + key) % string.length]);
